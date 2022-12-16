@@ -4,13 +4,13 @@ import Navbar from "../src/styles/Navbar.css"
 function Nav() {
     return (
         <nav>
-            <NavLink to="/">
+            <NavLink exact className="nav" activeClassName="active" to="/">
                 Home
             </NavLink>
-            <NavLink to="/dogs">
+            <NavLink className="nav" to="/dogs">
                 My Dogs
             </NavLink>
-            <NavLink to="/add-a-dog">
+            <NavLink className="nav" to="/add-a-dog">
                 Add a Dog
             </NavLink>
         </nav>
