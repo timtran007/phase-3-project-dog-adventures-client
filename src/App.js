@@ -2,6 +2,7 @@ import React from "react";
 import {Switch, Route} from "react-router-dom"
 import Nav from "./Nav"
 import DogContainer from "./DogContainer"
+import DogForm from "./DogForm"
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route exact path="/dogs">
           <DogContainer />
+        </Route>
+        <Route exact path="/add-a-dog">
+          <DogForm />
         </Route>
       </Switch>
     </div>
