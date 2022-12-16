@@ -1,4 +1,5 @@
 import React from "react";
+import {Switch, Route} from "react-router-dom"
 import Nav from "./Nav"
 
 function App() {
@@ -8,6 +9,13 @@ function App() {
       <div>
         <Nav />
       </div>
+      <Switch>
+        <Route exact path="/">
+          <header>
+            <h3 style={{textAlign: "center", marginTop: 50}}>Cherish Your Dog Adventures</h3>
+          </header>
+        </Route>
+      </Switch>
     </div>
   );
 }
