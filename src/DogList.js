@@ -1,3 +1,5 @@
+import DogDetails from './DogDetails'
+
 function DogList(){
     return(
         <div>

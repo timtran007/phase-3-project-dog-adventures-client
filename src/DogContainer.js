@@ -1,4 +1,4 @@
-import DogDetails from './DogDetails'
+import DogList from "./DogList"
 
 function DogContainer() {
     return(
