@@ -1,6 +1,7 @@
 import React from "react";
 import {Switch, Route} from "react-router-dom"
 import Nav from "./Nav"
+import DogContainer from "./DogContainer"
 
 function App() {
   return (
@@ -14,6 +15,9 @@ function App() {
           <header>
             <h3 style={{textAlign: "center", marginTop: 50}}>Cherish Your Dog Adventures</h3>
           </header>
+        </Route>
+        <Route exact path="/dogs">
+          <DogContainer />
         </Route>
       </Switch>
     </div>
