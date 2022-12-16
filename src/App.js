@@ -1,10 +1,20 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import {Switch, Route} from "react-router-dom"
 import Nav from "./Nav"
 import DogContainer from "./DogContainer"
 import DogForm from "./DogForm"
 
 function App() {
+  const[dogs, setDogs] = useState([])
+
+  useEffect(() =>{
+    fetch(`http://localhost:9292/dogs`)
+    .then(resp => resp.json())
+    .then(data => setDogs(data))
+  }, [])
+
+  console.log("dogs", dogs)
+
   return (
     <div>
       <h1 style={{textAlign: "center"}}> Welcome to Dog Adventures</h1>
