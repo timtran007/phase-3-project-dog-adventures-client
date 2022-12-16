@@ -13,8 +13,6 @@ function App() {
     .then(data => setDogs(data))
   }, [])
 
-  console.log("dogs", dogs)
-
   return (
     <div>
       <h1 style={{textAlign: "center"}}> Welcome to Dog Adventures</h1>
