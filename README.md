@@ -25,6 +25,14 @@ Great! You have just downloaded the back end server to persist our data into our
 
 Now in the front end project directory, you can run:
 
+### `npm install`
+
+This will download dependencies. 
+
+### `npm install react-router-dom@5`
+
+This will download version 5 of React Router
+
 ### `npm start`
 
 Runs the app in the development mode.\
