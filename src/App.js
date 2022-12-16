@@ -26,7 +26,7 @@ function App() {
           </header>
         </Route>
         <Route exact path="/dogs">
-          <DogContainer />
+          <DogContainer dogs={dogs}/>
         </Route>
         <Route exact path="/add-a-dog">
           <DogForm />
