@@ -1,7 +1,13 @@
 import React, {useState} from 'react'
 function AdventureCard({dog}){
 
+    const [toggleEdit, setToggleEdit] = useState(false)
 
+    function handleEditClick() {
+        setToggleEdit(!toggleEdit)
+    }
+
+    const displayEditForm = toggleEdit ? <EditForm /> :null
     
     const adventuresToDisplay = dog.adventures.map(adventure =>{
         return(
