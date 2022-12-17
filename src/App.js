@@ -13,7 +13,9 @@ function App() {
     .then(data => setDogs(data))
   }, [])
 
-  console.log("dogs", dogs)
+  function onAddDog(newDog){
+    setDogs([...dogs, newDog])
+  }
 
   const displayHeader = dogs.length > 1 ? "Cherish the Moments With Your Dogs" : "Cherish Your Dog's Adventures"
 

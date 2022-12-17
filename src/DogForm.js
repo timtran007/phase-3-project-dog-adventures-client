@@ -1,7 +1,7 @@
 import AddADog from '../src/styles/AddADog.css'
 import {useState} from 'react'
 
-function DogForm(){
+function DogForm({onAddDog}){
     const [formData, setFormData] = useState({
         name: "",
         breed: "",
@@ -20,9 +20,20 @@ function DogForm(){
     }
     console.log("formData", formData)
 
-
+    function handleSubmit(e){
+        e.preventDefault()
+        fetch(`http://localhost:9292`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(resp => resp.json())
+        .then(newDog => onAddDog(newDog))
+    }
     return(
-        <form style={{textAlign: "center"}} id="addADogForm">
+        <form onChange={handleChange} style={{textAlign: "center"}} id="addADogForm">
             <h2 id="addADogHeader">Add My Dog</h2>
             <p>
                 <label htmlFor="name">Dog's Name:</label>
