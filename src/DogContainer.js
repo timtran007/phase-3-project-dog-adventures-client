@@ -1,9 +1,9 @@
 import DogList from "./DogList"
 
-function DogContainer() {
+function DogContainer({dogs}) {
     return(
         <div>
-            <DogList />
+            <DogList dogs={dogs}/>
         </div>
     )
 }
