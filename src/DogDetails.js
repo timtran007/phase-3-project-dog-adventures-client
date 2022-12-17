@@ -20,7 +20,7 @@ function DogDetails({dogs}){
             <h2>This is {dog.name}! A {dog.breed}. {dog.name} is {dog.personality}.</h2>
             <div>
                 <h3>They have been on {dog.adventures.length} adventures!</h3>
-                <p>You can take a look at their adventures below:</p>
+                <p>Take a look at your adventures with {dog.name}:</p>
                 <AdventureCard dog={dog}/>
             </div>
 
