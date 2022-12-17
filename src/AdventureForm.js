@@ -1,7 +1,9 @@
+import AddAnAdventure from '../src/styles/AddAnAdventure.css'
 function AdventureForm(){
     return(
-        <form>
+        <form id="addAnAdventureForm">
              <div>
+                <h2 id="addAnAdventureHeader">Add Another Adventure</h2>
                 <label htmlFor="location">Place You Went:</label>
                 <p>
                 <input 

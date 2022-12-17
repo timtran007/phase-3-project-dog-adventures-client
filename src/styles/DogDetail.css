@@ -30,3 +30,7 @@ img {
   max-height: 75vh;
 }
 
+button {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}

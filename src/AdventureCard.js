@@ -1,12 +1,15 @@
-
+import React, {useState} from 'react'
 function AdventureCard({dog}){
-    debugger
+
+
+    
     const adventuresToDisplay = dog.adventures.map(adventure =>{
         return(
-            <div className="card">
-                <h3 className="dog">
+            <div key={adventure.id} className="card">
+                <h3 className="dog"> 
                 Adventure: {adventure.location}
                 </h3>
+                <p onClick={handleEditClick} style={{textDecoration: "underline"}}>edit</p>
                 <img className="dogImage" src= {adventure.image_url} alt={adventure.location} />
                 <h4 className="description">
                     City: {adventure.city}
@@ -20,6 +23,7 @@ function AdventureCard({dog}){
                 <h4 className="description">
                     Notes: {adventure.notes}
                 </h4>
+                {displayEditForm}
             </div>
         )
     })
