@@ -1,7 +1,7 @@
 import React from "react"
 import {useParams} from "react-router-dom"
 
-function DogDetails({}){
+function DogDetails({dogs}){
     const params = useParams()
     console.log(params)
 
