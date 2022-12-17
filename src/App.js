@@ -3,6 +3,7 @@ import {Switch, Route} from "react-router-dom"
 import Nav from "./Nav"
 import DogContainer from "./DogContainer"
 import DogForm from "./DogForm"
+import DogDetails from "./DogDetails";
 
 function App() {
   const[dogs, setDogs] = useState([])
@@ -34,8 +35,11 @@ function App() {
         <Route exact path="/dogs">
           <DogContainer dogs={dogs}/>
         </Route>
-        <Route exact path="/add-a-dog">
+        <Route path="/add-a-dog">
           <DogForm />
+        </Route>
+        <Route path={`/dogs/:dogId`}>
+            <DogDetails dogs={dogs}/>
         </Route>
       </Switch>
     </div>
