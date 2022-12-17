@@ -1,10 +1,10 @@
-import DogDetails from './DogDetails'
+import DogCard from './DogCard'
 
 function DogList({dogs}){
     return(
         <div>
             {dogs.map(dog => (
-                <DogDetails 
+                <DogCard 
                     key={dog.id}
                     dog={dog}
                 />
