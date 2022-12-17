@@ -1,19 +1,21 @@
-import AdventureCard from "./AdventureCard"
-import AdventureForm from "./AdventureForm"
+import React from "react"
+import {useParams} from "react-router-dom"
 
-function DogDetails({dog}){
+function DogDetails({}){
+    const params = useParams()
+    console.log(params)
+
     return(
-        <div className="card" id={dog.id}>
-            <h3 className="Dog">
-                Dog: {dog.name}
-            </h3>
-            <img className="dogImage" src= {dog.img_url} alt={dog.name} />
-            <h4 className="description">
-                Personality: {dog.personality}
-            </h4>
-            <h4 className="adventures">
-                I have been on {dog.adventures.length} adventures!
-            </h4>
+        <div>
+            <h1>Hello World!</h1>
+            {/* <img src={dog.img_url} alt={dog.name} />
+            <h2>This is {dog.name}! A {dog.breed}. {dog.name} is {dog.personality}</h2>
+            <div>
+                <h3>They have been on {adventure.length} adventures!</h3>
+                <p>You can take a look at their adventures below:</p>
+                <AdventureCard adventure={adventure}/>
+            </div> */}
+            
         </div>
     )
 }

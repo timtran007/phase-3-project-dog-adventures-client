@@ -83,7 +83,7 @@ function DogForm({onAddDog}){
                 />
                 </p>
             </p>
-            <input style={{padding: "10px", marginTop: "10px"}}type="submit" value="Add my dog!"/>
+            <input style={{padding: "1%", marginTop: "10px"}}type="submit" value="Add my dog!"/>
         </form>
     )
 }
