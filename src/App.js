@@ -11,7 +11,10 @@ function App() {
     fetch(`http://localhost:9292/dogs`)
     .then(resp => resp.json())
     .then(data => setDogs(data))
+    console.log(dogs)
   }, [])
+
+  const displayHeader = dogs.length > 1 ? "Cherish the Moments With Your Dogs" : "Cherish Your Dog's Adventures"
 
   return (
     <div>
@@ -22,7 +25,7 @@ function App() {
       <Switch>
         <Route exact path="/">
           <header>
-            <h3 style={{textAlign: "center", marginTop: 50}}>Cherish Your Dog Adventures</h3>
+            <h3 style={{textAlign: "center", marginTop: 50}}>{displayHeader}</h3>
           </header>
         </Route>
         <Route exact path="/dogs">
