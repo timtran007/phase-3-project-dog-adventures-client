@@ -1,7 +1,7 @@
 function AdventureForm(){
     return(
         <form>
-             <p>
+             <div>
                 <label htmlFor="location">Place You Went:</label>
                 <p>
                 <input 
@@ -12,8 +12,8 @@ function AdventureForm(){
                     // value={formData.}
                 />
                 </p>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label htmlFor="city">City:</label>
                 <p>
                 <input 
@@ -24,8 +24,8 @@ function AdventureForm(){
                     // value={formData.}
                 />
                 </p>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label htmlFor="date">Date:</label>
                 <p>
                 <input 
@@ -36,8 +36,8 @@ function AdventureForm(){
                     // value={formData.}
                 />
                 </p>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label htmlFor="rating">Rating `1 (lowest) to 5 (highest)`:</label>
                 <p>
                 <input 
@@ -49,8 +49,8 @@ function AdventureForm(){
                     // value={formData.}
                 />
                 </p>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label htmlFor="notes">Notes:</label>
                 <p>
                 <input 
@@ -61,8 +61,8 @@ function AdventureForm(){
                     // value={formData.}
                 />
                 </p>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label htmlFor="image_url">Image Link URL:</label>
                 <p>
                 <input 
@@ -73,7 +73,7 @@ function AdventureForm(){
                     // value={formData.}
                 />
                 </p>
-            </p>
+            </div>
         </form>
     )
 }

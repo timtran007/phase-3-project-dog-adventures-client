@@ -35,7 +35,7 @@ function DogForm({onAddDog}){
     return(
         <form onSubmit={handleSubmit} style={{textAlign: "center"}} id="addADogForm">
             <h2 id="addADogHeader">Add My Dog</h2>
-            <p>
+            <div>
                 <label htmlFor="name">Dog's Name:</label>
                 <p>
                 <input 
@@ -46,8 +46,8 @@ function DogForm({onAddDog}){
                     value={formData.name}
                 />
                 </p>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label htmlFor="breed">Dog's Breed:</label>
                 <p>
                 <input 
@@ -58,8 +58,8 @@ function DogForm({onAddDog}){
                     value={formData.breed}
                 />
                 </p>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label htmlFor="personality">Dog's Personality:</label>
                 <p>
                 <input 
@@ -70,8 +70,8 @@ function DogForm({onAddDog}){
                     value={formData.personality}
                 />
                 </p>
-            </p>
-            <p>
+            </div>
+            <div>
                 <label htmlFor="img_url">Dog's Image URL:</label>
                 <p>
                 <input 
@@ -82,7 +82,7 @@ function DogForm({onAddDog}){
                     value={formData.img_url}
                 />
                 </p>
-            </p>
+            </div>
             <input style={{padding: "1%", marginTop: "10px"}}type="submit" value="Add my dog!"/>
         </form>
     )
