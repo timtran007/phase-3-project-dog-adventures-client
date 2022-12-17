@@ -33,7 +33,7 @@ function DogForm({onAddDog}){
         .then(newDog => onAddDog(newDog))
     }
     return(
-        <form onChange={handleChange} style={{textAlign: "center"}} id="addADogForm">
+        <form onSubmit={handleSubmit} style={{textAlign: "center"}} id="addADogForm">
             <h2 id="addADogHeader">Add My Dog</h2>
             <p>
                 <label htmlFor="name">Dog's Name:</label>

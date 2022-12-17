@@ -36,7 +36,7 @@ function App() {
           <DogContainer dogs={dogs}/>
         </Route>
         <Route path="/add-a-dog">
-          <DogForm />
+          <DogForm onAddDog={onAddDog}/>
         </Route>
         <Route path={`/dogs/:dogId`}>
             <DogDetails dogs={dogs}/>
