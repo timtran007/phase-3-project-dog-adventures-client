@@ -1,4 +1,4 @@
-import DogDetail from '../src/styles/DogDetail.css'
+import DogCards from '../src/styles/DogCards.css'
 import {Link} from 'react-router-dom'
 
 
