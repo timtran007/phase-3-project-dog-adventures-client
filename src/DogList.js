@@ -3,14 +3,13 @@ import DogDetails from './DogDetails'
 function DogList({dogs}){
     return(
         <div>
-            {dogs.map(dog => {
+            {dogs.map(dog => (
                 <DogDetails 
                     key={dog.id}
                     dog={dog}
                 />
-            }
+                )
             )}
-
         </div>
     )
 }
