@@ -8,3 +8,5 @@ function DogDetails(){
         </div>
     )
 }
+
+export default DogDetails
