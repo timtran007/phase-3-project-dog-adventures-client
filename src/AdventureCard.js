@@ -1,21 +1,24 @@
 import React, {useState} from 'react'
+import EditForm from './EditForm'
+
 function AdventureCard({dog}){
 
     const [toggleEdit, setToggleEdit] = useState(false)
+    const [targetID, setTargetID] = useState(0)
 
-    function handleEditClick() {
+    function handleEditClick(e) {
         setToggleEdit(!toggleEdit)
+        setTargetID(parseInt(e.target.id))
     }
-
-    const displayEditForm = toggleEdit ? <EditForm /> :null
-    
-    const adventuresToDisplay = dog.adventures.map(adventure =>{
+  
+  return(      
+    dog.adventures.map(adventure =>{ 
         return(
             <div key={adventure.id} className="card">
                 <h3 className="dog"> 
                 Adventure: {adventure.location}
                 </h3>
-                <p onClick={handleEditClick} style={{textDecoration: "underline"}}>edit</p>
+                <p id={adventure.id} onClick={handleEditClick} style={{textDecoration: "underline"}}>edit</p>
                 <img className="dogImage" src= {adventure.image_url} alt={adventure.location} />
                 <h4 className="description">
                     City: {adventure.city}
@@ -29,16 +32,11 @@ function AdventureCard({dog}){
                 <h4 className="description">
                     Notes: {adventure.notes}
                 </h4>
-                {displayEditForm}
+                {toggleEdit && adventure.id === targetID ? <EditForm dog={dog}/> : null}
             </div>
         )
     })
-
-    return(
-        <div>
-            {adventuresToDisplay}
-        </div>
-    )
+  )
 }
 
 export default AdventureCard
