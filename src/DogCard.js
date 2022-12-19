@@ -5,6 +5,9 @@ import {Link} from 'react-router-dom'
 
 function DogCard({dog}){
     const dogID = dog.id
+    
+    const adventures = dog.adventures === undefined ? "0" : dog.adventures.length
+    debugger
 
     return(
         <div className="card" id={dog.id}>
@@ -16,7 +19,7 @@ function DogCard({dog}){
                 Personality: {dog.personality}
             </h4>
             <h4 className="adventures">
-                I have been on {dog.adventures.length} adventures!
+                I have been on {adventures} adventures!
             </h4>
             <button style={{padding: "1%"}} key={dog.id}>
                 <Link to={`/dogs/${dogID}`}>My Adventures with {dog.name}</Link>
