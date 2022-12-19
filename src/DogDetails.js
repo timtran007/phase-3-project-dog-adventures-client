@@ -17,7 +17,8 @@ function DogDetails({dogs, setDogs}){
 
     //work in progress
     function onSubmitAdventure(newAdventure){
-        setDogs()
+        const addNewAdventure = 
+        setDogs([...dogs, ])
     }
 
     return(
@@ -28,7 +29,7 @@ function DogDetails({dogs, setDogs}){
             <div>
                 <h3>They have been on {adventures} adventures!</h3>
                 <p>Take a look at your adventures with {dog.name}:</p>
-                {dogs.adventures === undefined ? null : <AdventureCard setDogs={setDogs} dog={dog}/>}
+                {dog.adventures.length > 0 ? <AdventureCard setDogs={setDogs} dog={dog}/> : null}
             </div>
 
             <button onClick={handleButtonClick}>Add a New Adventure</button>
