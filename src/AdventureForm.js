@@ -76,6 +76,9 @@ function AdventureForm(){
                 />
                 </p>
             </div>
+            <div>
+            <input style={{padding: "1%", marginTop: "10px"}}type="submit" value="Add Submit!"/>
+            </div>
         </form>
     )
 }
