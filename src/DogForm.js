@@ -22,7 +22,7 @@ function DogForm({onAddDog}){
 
     function handleSubmit(e){
         e.preventDefault()
-        fetch(`http://localhost:9292`, {
+        fetch(`http://localhost:9292/dogs`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
