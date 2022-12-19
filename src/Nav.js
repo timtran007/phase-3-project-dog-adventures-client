@@ -10,7 +10,7 @@ function Nav() {
             <NavLink className="nav" to="/dogs">
                 My Dogs
             </NavLink>
-            <NavLink className="nav" to="/add-a-dog">
+            <NavLink exact className="nav" to="/add-a-dog">
                 Add a Dog
             </NavLink>
         </nav>
