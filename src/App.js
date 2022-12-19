@@ -18,6 +18,7 @@ function App() {
     setDogs([...dogs, newDog])
   }
 
+
   const displayHeader = dogs.length > 1 ? "Cherish the Moments With Your Dogs" : "Cherish Your Dog's Adventures"
 
   return (
@@ -39,7 +40,7 @@ function App() {
           <DogForm onAddDog={onAddDog}/>
         </Route>
         <Route path={`/dogs/:dogId`}>
-            <DogDetails dogs={dogs}/>
+            <DogDetails setDogs={setDogs} dogs={dogs}/>
         </Route>
       </Switch>
     </div>

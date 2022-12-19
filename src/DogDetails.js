@@ -4,7 +4,7 @@ import AdventureCard from './AdventureCard'
 import AdventureForm from "./AdventureForm"
 import DogDetail from '../src/styles/DogDetail.css'
 
-function DogDetails({dogs}){
+function DogDetails({dogs, setDogs}){
     const params = useParams()
     const dog = dogs[parseInt(params.dogId) - 1]
     const [onClick, setOnClick] = useState(false)
@@ -21,7 +21,7 @@ function DogDetails({dogs}){
             <div>
                 <h3>They have been on {dog.adventures.length} adventures!</h3>
                 <p>Take a look at your adventures with {dog.name}:</p>
-                <AdventureCard dog={dog}/>
+                <AdventureCard setDogs={setDogs} dog={dog}/>
             </div>
 
             <button onClick={handleButtonClick}>Add a New Adventure</button>
