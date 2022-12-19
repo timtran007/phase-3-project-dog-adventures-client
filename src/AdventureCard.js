@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import EditForm from './EditForm'
 
-function AdventureCard({dog}){
+function AdventureCard({dog, setDogs}){
 
     const [toggleEdit, setToggleEdit] = useState(false)
     const [targetID, setTargetID] = useState(0)
@@ -9,6 +9,20 @@ function AdventureCard({dog}){
     function handleEditClick(e) {
         setToggleEdit(!toggleEdit)
         setTargetID(parseInt(e.target.id))
+    }
+
+    function onEditDogAdventure(updatedAdventureData){
+        const updatedDogAdventure = dog.adventures
+        .map(adventure =>{
+            if(adventure.id === updatedAdventureData.id){
+                return updatedAdventureData
+            }
+            else{
+                return adventure
+            }
+        })
+        debugger
+        setDogs(updatedDogAdventure)
     }
   
   return(      
@@ -32,7 +46,7 @@ function AdventureCard({dog}){
                 <h4 className="description">
                     Notes: {adventure.notes}
                 </h4>
-                {toggleEdit && adventure.id === targetID ? <EditForm dog={dog}/> : null}
+                {toggleEdit && adventure.id === targetID ? <EditForm onEditDogAdventure={onEditDogAdventure} adventure={adventure}/> : null}
             </div>
         )
     })
