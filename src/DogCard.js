@@ -7,7 +7,6 @@ function DogCard({dog}){
     const dogID = dog.id
     
     const adventures = dog.adventures === undefined ? "0" : dog.adventures.length
-    debugger
 
     return(
         <div className="card" id={dog.id}>
