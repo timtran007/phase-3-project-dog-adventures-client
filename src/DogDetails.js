@@ -6,35 +6,46 @@ import DogDetail from '../src/styles/DogDetail.css'
 
 function DogDetails({dogs, setDogs}){
     const params = useParams()
-    const dog = dogs[parseInt(params.dogId) - 1]
+    const dog = dogs.find(dog => dog.id === parseInt(params.id))
     const [onClick, setOnClick] = useState(false)
-
-    const adventures = dog.adventures === undefined ? "0" : dog.adventures.length
+  
 
     function handleButtonClick(){
         setOnClick(!onClick)
     }
 
-    //work in progress
     function onSubmitAdventure(newAdventure){
-        const addNewAdventure = 
-        setDogs([...dogs, ])
+        const addNewAdventure = [...dog.adventures, newAdventure]   
+
+        const updatedDog = {
+            ...dog,
+            adventures: addNewAdventure
+        }
+        debugger
+        const updatedDogs = dogs
+            .map( d => {
+                if(d.id === dog.id){
+                    return updatedDog
+                }
+                else{
+                    return d
+                }
+            })
+        setDogs(updatedDogs)
     }
 
     return(
         <div className="card">
             <h1>Hello World!</h1>
-            <img src={dog.img_url} alt={dog.name} />
-            <h2>This is {dog.name}! A {dog.breed}. {dog.name} is {dog.personality}.</h2>
-            <div>
-                <h3>They have been on {adventures} adventures!</h3>
+            {dog ? <img src={dog.img_url} alt={dog.name} /> : null}
+            {dog ? <h2>This is {dog.name}! A {dog.breed}. {dog.name} is {dog.personality}.</h2> : null}
+            {dog ? <div>
                 <p>Take a look at your adventures with {dog.name}:</p>
-                {dog.adventures.length > 0 ? <AdventureCard setDogs={setDogs} dog={dog}/> : null}
-            </div>
+                {dog ? <AdventureCard setDogs={setDogs} dog={dog} dogs={dogs}/> : null}
+            </div> : null}
 
-            <button onClick={handleButtonClick}>Add a New Adventure</button>
+           {dog ? <button onClick={handleButtonClick}>Add a New Adventure</button> : null}
             {onClick ? <AdventureForm onSubmitAdventure={onSubmitAdventure} dog={dog}/>: null}
-            
         </div>
     )
 }
