@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
 import EditForm from './EditForm'
+import DeleteButton from './DeleteButton'
 
-function AdventureCard({dog, setDogs}){
+function AdventureCard({dog, setDogs, dogs}){
 
     const [toggleEdit, setToggleEdit] = useState(false)
     const [targetID, setTargetID] = useState(0)
@@ -12,7 +13,7 @@ function AdventureCard({dog, setDogs}){
     }
 
     function onEditDogAdventure(updatedAdventureData){
-        const updatedDogAdventure = dog.adventures
+        const updatedDogAdventures = dog.adventures
         .map(adventure =>{
             if(adventure.id === updatedAdventureData.id){
                 return updatedAdventureData
@@ -21,8 +22,45 @@ function AdventureCard({dog, setDogs}){
                 return adventure
             }
         })
+
+        const updatedDog = {
+            ...dog, 
+            adventures: updatedDogAdventures
+        }
+        
+        const updatedDogs = dogs
+            .map( d => {
+                if(d.id === dog.id){
+                    return updatedDog
+                }
+                else{
+                    return d
+                }
+            })
+            debugger
+        setDogs(updatedDogs)
+    }
+
+    function onDeleteAdventure(deletedAdventure){
         debugger
-        setDogs(updatedDogAdventure)
+        const updatedAdventures = dog.adventures
+            .filter(adventure => adventure.id !== deletedAdventure.id)
+        
+        const updatedDog = {
+            ...dog,
+            adventures: updatedAdventures
+        }
+
+        const updatedDogs = dogs
+            .map(d =>{
+                if(d.id === dog.id){
+                    return updatedDog
+                }
+                else{
+                    return d
+                }
+            })
+        setDogs(updatedDogs)
     }
   
   return(      
@@ -47,6 +85,7 @@ function AdventureCard({dog, setDogs}){
                     Notes: {adventure.notes}
                 </h4>
                 {toggleEdit && adventure.id === targetID ? <EditForm onEditDogAdventure={onEditDogAdventure} adventure={adventure}/> : null}
+                <DeleteButton onDeleteAdventure={onDeleteAdventure} adventure={adventure} />
             </div>
         )
     })
