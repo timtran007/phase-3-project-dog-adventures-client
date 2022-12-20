@@ -37,12 +37,10 @@ function AdventureCard({dog, setDogs, dogs}){
                     return d
                 }
             })
-            debugger
         setDogs(updatedDogs)
     }
 
     function onDeleteAdventure(deletedAdventure){
-        debugger
         const updatedAdventures = dog.adventures
             .filter(adventure => adventure.id !== deletedAdventure.id)
         
