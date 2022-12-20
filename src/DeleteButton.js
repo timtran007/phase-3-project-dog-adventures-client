@@ -1,8 +1,6 @@
 
 function DeleteButton({adventure, onDeleteAdventure}){
     function handleDeleteClick(e){
-        debugger
-        // if(adventure.id === parseInt(e.target.id))
         fetch(`http://localhost:9292/adventures/${adventure.id}`,{
             method: "DELETE"
         })
