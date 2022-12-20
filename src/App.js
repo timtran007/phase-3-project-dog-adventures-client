@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
 import {Switch, Route} from "react-router-dom"
 import Nav from "./Nav"
-import DogContainer from "./DogContainer"
 import DogForm from "./DogForm"
 import DogDetails from "./DogDetails";
+import DogList from "./DogList";
 
 function App() {
   const[dogs, setDogs] = useState([])
@@ -34,12 +34,12 @@ function App() {
           </header>
         </Route>
         <Route exact path="/dogs">
-          <DogContainer dogs={dogs}/>
+          <DogList dogs={dogs}/>
         </Route>
-        <Route path="/add-a-dog">
+        <Route path="/new">
           <DogForm onAddDog={onAddDog}/>
         </Route>
-        <Route path={`/dogs/:dogId`}>
+        <Route path={`/dogs/:id`}>
             <DogDetails setDogs={setDogs} dogs={dogs}/>
         </Route>
       </Switch>
