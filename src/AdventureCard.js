@@ -62,34 +62,36 @@ function AdventureCard({dog, setDogs, dogs}){
             })
         setDogs(updatedDogs)
     }
-  
-  return(      
-    dog.adventures.map(adventure =>{ 
+  if(dog.adventures !== undefined){
+  return(   
+     dog.adventures.map(adventure =>{ 
         return(
+            
             <div key={adventure.id} className="card">
-                <h3 className="dog"> 
+                
+                {adventure ? <h3 className="dog"> 
                 Adventure: {adventure.location}
-                </h3>
-                <p id={adventure.id} onClick={handleEditClick} style={{textDecoration: "underline"}}>edit</p>
-                <img className="dogImage" src= {adventure.image_url} alt={adventure.location} />
-                <h4 className="description">
+                </h3> : null}
+                {adventure ?<p id={adventure.id} onClick={handleEditClick} style={{textDecoration: "underline"}}>edit</p>: null }
+                {adventure ? <img className="dogImage" src= {adventure.image_url} alt={adventure.location} />: null }
+                {adventure ? <h4 className="description">
                     City: {adventure.city}
-                </h4>
-                <h4 className="description">
+                </h4>: null }
+                {adventure ? <h4 className="description">
                     Date: {adventure.date}
-                </h4>
-                <h4 className="description">
+                </h4> :null}
+                {adventure ? <h4 className="description">
                     Rating: {adventure.rating}/5
-                </h4>
-                <h4 className="description">
+                </h4> :null}
+                {adventure ?<h4 className="description">
                     Notes: {adventure.notes}
-                </h4>
-                {toggleEdit && adventure.id === targetID ? <EditForm onEditDogAdventure={onEditDogAdventure} adventure={adventure}/> : null}
-                <DeleteButton onDeleteAdventure={onDeleteAdventure} adventure={adventure} />
+                </h4> : null}
+                {adventure && toggleEdit && adventure.id === targetID ? <EditForm onEditDogAdventure={onEditDogAdventure} adventure={adventure}/> : null}
+                {adventure ?<DeleteButton onDeleteAdventure={onDeleteAdventure} adventure={adventure} /> :null}
             </div>
         )
     })
-  )
+  )}
 }
 
 export default AdventureCard

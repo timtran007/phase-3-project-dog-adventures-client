@@ -7,12 +7,13 @@ function Nav() {
             <NavLink exact className="nav" activeClassName="active" to="/">
                 Home
             </NavLink>
-            <NavLink className="nav" to="/dogs">
+            <NavLink  exact className="nav" to="/dogs">
                 My Dogs
             </NavLink>
             <NavLink exact className="nav" to="/dogs/new">
                 Add a Dog
             </NavLink>
+            
         </nav>
     )
 }
