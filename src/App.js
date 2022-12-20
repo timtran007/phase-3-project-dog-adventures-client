@@ -36,7 +36,7 @@ function App() {
         <Route exact path="/dogs">
           <DogList dogs={dogs}/>
         </Route>
-        <Route path="/new">
+        <Route path="/dogs/new">
           <DogForm onAddDog={onAddDog}/>
         </Route>
         <Route path={`/dogs/:id`}>
