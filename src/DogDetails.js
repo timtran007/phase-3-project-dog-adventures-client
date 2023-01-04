@@ -15,11 +15,11 @@ function DogDetails({dogs, setDogs}){
     }
 
     function onSubmitAdventure(newAdventure){
-        if(dog.adventures === undefined){
-            const addNewAdventure = [newAdventure]
+        const newAdventuresArray = dog.adventures ? [...dog.adventures, newAdventure] : [newAdventure]
+        
             const updatedDog = {
                 ...dog,
-                adventures: addNewAdventure
+                adventures: newAdventuresArray
             }
             const updatedDogs = dogs
                 .map( d => {
@@ -31,23 +31,6 @@ function DogDetails({dogs, setDogs}){
                     }
                 })
             setDogs(updatedDogs)
-        } else{
-            const addNewAdventure = [...dog.adventures, newAdventure]
-            const updatedDog = {
-                ...dog,
-                adventures: addNewAdventure
-            }
-            const updatedDogs = dogs
-                .map( d => {
-                    if(d.id === dog.id){
-                        return updatedDog
-                    }
-                    else{
-                        return d
-                    }
-                })
-            setDogs(updatedDogs)
-        }
     }
 
     return(
