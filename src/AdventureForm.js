@@ -1,7 +1,7 @@
 import AddAnAdventure from '../src/styles/AddAnAdventure.css'
 import { useState } from 'react'
 function AdventureForm({dog, onSubmitAdventure}){
-    const [formData, setFormData] = useState({
+    const initialFormData = {
         image_url: "",
         date: "",
         city: "",
@@ -9,7 +9,9 @@ function AdventureForm({dog, onSubmitAdventure}){
         rating: 1,
         notes: "",
         dog_id: dog.id
-    })
+    }
+    const [formData, setFormData] = useState(initialFormData)
+
 
     function handleChange(e){
         const key = e.target.name
@@ -34,9 +36,9 @@ function AdventureForm({dog, onSubmitAdventure}){
         .then(newAdventure =>{
             onSubmitAdventure(newAdventure)
         })
+        setFormData(initialFormData)
     }
 
-    console.log(formData)
     return(
         <form onSubmit={handleSubmit} id="addAnAdventureForm">
              <div>
